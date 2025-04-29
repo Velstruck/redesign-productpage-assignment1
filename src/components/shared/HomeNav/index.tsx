@@ -148,7 +148,7 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
 								</div>
 							))}
 							{
-								user?.role?.[0] === 'admin' ? (
+								user?.authority?.[0] === 'admin' ? (
 									<div className='mt-3'>
 										<Button onClick={() => navigate('/stores')}>Go to Admin Dashboard</Button>
 									</div>
@@ -199,7 +199,7 @@ const HomeNavbar: React.FC<HomeNavbarProps> = ({
 					<div className="hidden lg:flex items-center space-x-8">
 						{/* Navigation Items */}
 						{
-							user?.role?.[0] === 'admin' ? (
+							user?.authority?.[0] === 'admin' ? (
 								<div className='mt-3'>
 									<Button variant='solid' className='rounded-[5px]' onClick={() => navigate('/stores')}>Go to Admin Dashboard</Button>
 								</div>

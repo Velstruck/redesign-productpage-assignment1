@@ -1,5 +1,5 @@
 import { LayoutType } from './theme'
-import type { LazyExoticComponent, ReactNode } from 'react'
+import type { FC, LazyExoticComponent, ReactNode } from 'react'
 
 export type PageHeaderProps = {
     title?: string | ReactNode | LazyExoticComponent<() => JSX.Element>
@@ -19,7 +19,7 @@ export interface Meta {
 export type Route = {
     key: string
     path: string
-    component: LazyExoticComponent<<T extends Meta>(props: T) => JSX.Element>
+    component: LazyExoticComponent<FC<{}>>
     authority: string[]
     meta?: Meta
 }

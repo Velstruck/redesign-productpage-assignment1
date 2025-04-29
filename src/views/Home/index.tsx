@@ -5,12 +5,15 @@ import ContactForm from './components/ContactForm';
 import MainFooter from './components/MainFooter';
 import InfoSection from './components/InfoSection';
 import FeaturesGrid from './components/FeaturesGrid';
+import ClaimLandingSection from './components/ClaimLandingSection';
+import Testimonials from './components/Testimonials';
+import TrustedBySection from './components/TrustedBySection';
 
 const Home: React.FC = () => {
 	const contactRef = useRef(null);
 	const aboutRef = useRef(null);
 	const FqRef = useRef(null);
-	const scrollToSection = (ref) => {
+	const scrollToSection = (ref:any) => {
 		ref.current.scrollIntoView({ behavior: 'smooth' });
 	};
 
@@ -53,19 +56,27 @@ const Home: React.FC = () => {
 						featuresRef={FqRef}
 						contactRef={contactRef}
 						aboutRef={aboutRef}
+						
 					/>
-					{/* <div className='bg-white'>
-						<ClaimLandingSection />
-					</div> */}
-					<div className='!bg-[#eff6ff] relative'>
+					<div className='relative'>
+						<TrustedBySection />
+					</div>
+					<div className='!bg-[#eff6ff] relative' ref={FqRef}>
 						<FeaturesGrid />
+					</div>
+					<div className='bg-white'>
+						<ClaimLandingSection />
 					</div>
 					<div className='!bg-white relative' ref={aboutRef}>
 						<InfoSection />
 					</div>
-					<div className='relative bg-white' ref={FqRef}>
+					<div className='relative'>
+						<Testimonials />
+					</div>
+					<div className='relative bg-white' >
 						<HomeFAQs />
 					</div>
+					
 					<div className='bg-white relative' ref={contactRef}>
 						<ContactForm />
 					</div>
